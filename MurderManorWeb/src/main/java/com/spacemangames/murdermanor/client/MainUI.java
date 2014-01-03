@@ -14,8 +14,9 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
 
 public class MainUI extends Composite {
-    private static MainUIUiBinder  uiBinder        = GWT.create(MainUIUiBinder.class);
-    private static StringConstants stringConstants = GWT.create(StringConstants.class);
+    private static MainUIUiBinder     uiBinder           = GWT.create(MainUIUiBinder.class);
+    private static DescriptionStrings descriptionStrings = GWT.create(DescriptionStrings.class);
+    private static ReplyStrings       replyStrings       = GWT.create(ReplyStrings.class);
 
     interface MainUIUiBinder extends UiBinder<Widget, MainUI> {
     }
@@ -35,7 +36,7 @@ public class MainUI extends Composite {
     public MainUI() {
         initWidget(uiBinder.createAndBindUi(this));
 
-        storyPanel.setHTML(stringConstants.introText());
+        storyPanel.setHTML(descriptionStrings.introText());
     }
 
     @UiHandler(value = "submitButton")
@@ -51,6 +52,6 @@ public class MainUI extends Composite {
     }
 
     private void handleInput(String text) {
-        feedbackPanel.setHTML(stringConstants.unknownCommand());
+        feedbackPanel.setHTML(replyStrings.unknownCommand());
     }
 }
