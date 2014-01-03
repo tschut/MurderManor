@@ -8,12 +8,15 @@
 	<g:VerticalPanel>
 		<b:Row>
 			<b:Column size="12">
-				<g:HTML ui:field="storyPanel"></g:HTML>
+				<b:Well>
+					<g:HTML ui:field="storyPanel"></g:HTML>
+				</b:Well>
 			</b:Column>
 		</b:Row>
 		<b:Row>
 			<b:Column size="10">
-				<b:TextBox ui:field="inputTextBox" placeholder="Enter command" width="100%"></b:TextBox>
+				<b:TextBox ui:field="inputTextBox" placeholder="Enter command"
+					width="100%"></b:TextBox>
 			</b:Column>
 			<b:Column size="2">
 				<b:Button ui:field="submitButton" block="true">Submit</b:Button>
