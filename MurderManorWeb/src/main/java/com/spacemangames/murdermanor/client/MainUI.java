@@ -58,5 +58,6 @@ public class MainUI extends Composite {
 
     private void handleInput(String text) {
         inputHandler.handle(text);
+        inputTextBox.setText(null);
     }
 }
