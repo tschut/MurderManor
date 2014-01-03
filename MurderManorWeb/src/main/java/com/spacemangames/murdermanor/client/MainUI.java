@@ -12,31 +12,36 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
+import com.spacemangames.murdermanor.input.InputHandler;
 
 public class MainUI extends Composite {
-    private static MainUIUiBinder     uiBinder           = GWT.create(MainUIUiBinder.class);
-    private static DescriptionStrings descriptionStrings = GWT.create(DescriptionStrings.class);
-    private static ReplyStrings       replyStrings       = GWT.create(ReplyStrings.class);
+    private static MainUIUiBinder uiBinder = GWT.create(MainUIUiBinder.class);
 
     interface MainUIUiBinder extends UiBinder<Widget, MainUI> {
     }
 
-    @UiField
-    protected HTML    storyPanel;
+    private InputHandler inputHandler;
+    private RoomManager  roomManager;
 
     @UiField
-    protected HTML    feedbackPanel;
+    protected HTML       storyPanel;
 
     @UiField
-    protected TextBox inputTextBox;
+    protected HTML       feedbackPanel;
 
     @UiField
-    protected Button  submitButton;
+    protected TextBox    inputTextBox;
+
+    @UiField
+    protected Button     submitButton;
 
     public MainUI() {
         initWidget(uiBinder.createAndBindUi(this));
 
-        storyPanel.setHTML(descriptionStrings.introText());
+        roomManager = new RoomManager(storyPanel);
+        inputHandler = new InputHandler(roomManager, feedbackPanel);
+
+        storyPanel.setHTML(roomManager.getCurrentRoom().getDescription());
     }
 
     @UiHandler(value = "submitButton")
@@ -52,6 +57,6 @@ public class MainUI extends Composite {
     }
 
     private void handleInput(String text) {
-        feedbackPanel.setHTML(replyStrings.unknownCommand());
+        inputHandler.handle(text);
     }
 }
