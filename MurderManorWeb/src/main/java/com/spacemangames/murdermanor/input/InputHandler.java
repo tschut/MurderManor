@@ -23,6 +23,7 @@ public class InputHandler {
 
         commands.add(new GetUpCommand(roomManager, feedbackPanel));
         commands.add(new LookWindowCommand(roomManager, feedbackPanel));
+        commands.add(new LookNorthWindowCommand(roomManager, feedbackPanel));
     }
 
     public void handle(String input) {

@@ -10,4 +10,6 @@ public interface ReplyStrings extends Constants {
     String getUpInWrongRoom();
 
     String whichWindow();
+
+    String northWindow();
 }

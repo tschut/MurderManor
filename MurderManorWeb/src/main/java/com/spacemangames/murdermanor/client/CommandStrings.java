@@ -6,4 +6,6 @@ public interface CommandStrings extends Constants {
     String[] getUp();
 
     String[] lookWindow();
+
+    String[] lookNorthWindow();
 }
