@@ -20,7 +20,9 @@ public class InputHandler {
     public InputHandler(RoomManager roomManager, HTML feedbackPanelLastCommand, HTML feedbackPanel) {
         this.feedbackPanelLastCommand = feedbackPanelLastCommand;
         this.feedbackPanel = feedbackPanel;
+
         commands.add(new GetUpCommand(roomManager, feedbackPanel));
+        commands.add(new LookWindowCommand(roomManager, feedbackPanel));
     }
 
     public void handle(String input) {

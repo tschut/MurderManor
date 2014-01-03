@@ -8,4 +8,6 @@ public interface ReplyStrings extends Constants {
     String ok();
 
     String getUpInWrongRoom();
+
+    String whichWindow();
 }

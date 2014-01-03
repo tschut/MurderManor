@@ -1,5 +1,6 @@
 package com.spacemangames.murdermanor.input;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import com.google.gwt.core.client.GWT;
@@ -20,7 +21,15 @@ public abstract class Command {
         this.feedbackPanel = feedbackPanel;
     }
 
-    public abstract Set<String> commandStrings();
+    public abstract String[] commandStringArray();
 
     public abstract String execute();
+
+    public Set<String> commandStrings() {
+        HashSet<String> commandStringSet = new HashSet<String>();
+        for (String string : commandStringArray()) {
+            commandStringSet.add(string);
+        }
+        return commandStringSet;
+    }
 }
