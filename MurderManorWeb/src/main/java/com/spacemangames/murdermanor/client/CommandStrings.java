@@ -12,4 +12,14 @@ public interface CommandStrings extends Constants {
     String[] lookEastWindow();
 
     String[] lookWardrobe();
+
+    String[] lookClock();
+
+    String[] takeCoathanger();
+
+    String[] takeClock();
+
+    String[] sitChair();
+
+    String[] sleepBed();
 }

@@ -16,4 +16,14 @@ public interface ReplyStrings extends Constants {
     String eastWindow();
 
     String wardrobe();
+
+    String takeCoatHanger();
+
+    String lookClock();
+
+    String takeClock();
+
+    String sitChair();
+
+    String sleepBed();
 }
