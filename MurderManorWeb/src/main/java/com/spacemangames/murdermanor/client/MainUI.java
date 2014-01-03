@@ -8,7 +8,8 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
 
 public class MainUI extends Composite {
-    private static MainUIUiBinder uiBinder = GWT.create(MainUIUiBinder.class);
+    private static MainUIUiBinder  uiBinder        = GWT.create(MainUIUiBinder.class);
+    private static StringConstants stringConstants = GWT.create(StringConstants.class);
 
     interface MainUIUiBinder extends UiBinder<Widget, MainUI> {
     }
@@ -19,5 +20,6 @@ public class MainUI extends Composite {
     public MainUI() {
         initWidget(uiBinder.createAndBindUi(this));
 
+        storyPanel.setHTML(stringConstants.introText());
     }
 }
