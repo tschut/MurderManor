@@ -36,8 +36,10 @@ public class InputHandler {
 
     private Command findCommand(String input) {
         for (Command command : commands) {
-            if (command.commandStrings().contains(input)) {
-                return command;
+            for (String commandString : command.commandStrings()) {
+                if (commandString.equalsIgnoreCase(input)) {
+                    return command;
+                }
             }
         }
         return null;
