@@ -8,4 +8,8 @@ public interface CommandStrings extends Constants {
     String[] lookWindow();
 
     String[] lookNorthWindow();
+
+    String[] lookEastWindow();
+
+    String[] lookWardrobe();
 }

@@ -12,4 +12,8 @@ public interface ReplyStrings extends Constants {
     String whichWindow();
 
     String northWindow();
+
+    String eastWindow();
+
+    String wardrobe();
 }

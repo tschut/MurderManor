@@ -24,6 +24,8 @@ public class InputHandler {
         commands.add(new GetUpCommand(roomManager, feedbackPanel));
         commands.add(new LookWindowCommand(roomManager, feedbackPanel));
         commands.add(new LookNorthWindowCommand(roomManager, feedbackPanel));
+        commands.add(new LookEastWindowCommand(roomManager, feedbackPanel));
+        commands.add(new LookWardrobeCommand(roomManager, feedbackPanel));
     }
 
     public void handle(String input) {
