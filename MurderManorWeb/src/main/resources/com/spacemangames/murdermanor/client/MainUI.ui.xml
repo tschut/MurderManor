@@ -14,6 +14,13 @@
 			</b:Column>
 		</b:Row>
 		<b:Row>
+			<b:Column size="12">
+				<b:Well>
+					<g:HTML ui:field="feedbackPanel"></g:HTML>
+				</b:Well>
+			</b:Column>
+		</b:Row>
+		<b:Row>
 			<b:Column size="10">
 				<b:TextBox ui:field="inputTextBox" placeholder="Enter command"
 					width="100%"></b:TextBox>
