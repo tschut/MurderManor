@@ -7,7 +7,7 @@
 
 	<b:Row>
 		<b:Column size="12">
-			
+			<g:HTML ui:field="storyPanel"></g:HTML>
 		</b:Column>
 	</b:Row>
 
