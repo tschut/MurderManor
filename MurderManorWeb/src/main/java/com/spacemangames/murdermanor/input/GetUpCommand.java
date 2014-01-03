@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.google.gwt.user.client.ui.HTML;
 import com.spacemangames.murdermanor.client.RoomManager;
+import com.spacemangames.murdermanor.client.RoomManager.Room;
 
 public class GetUpCommand extends Command {
     public GetUpCommand(RoomManager roomManager, HTML feedbackPanel) {
@@ -21,7 +22,12 @@ public class GetUpCommand extends Command {
     }
 
     @Override
-    public void execute() {
-        roomManager.moveTo(RoomManager.Room.GUESTROOMI);
+    public String execute() {
+        if (roomManager.getCurrentRoom().equals(Room.BED)) {
+            roomManager.moveTo(RoomManager.Room.GUESTROOMI);
+            return replyStrings.ok();
+        } else {
+            return replyStrings.getUpInWrongRoom();
+        }
     }
 }

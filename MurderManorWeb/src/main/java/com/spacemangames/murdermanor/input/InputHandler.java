@@ -15,7 +15,10 @@ public class InputHandler {
 
     private HTML                feedbackPanel;
 
-    public InputHandler(RoomManager roomManager, HTML feedbackPanel) {
+    private HTML                feedbackPanelLastCommand;
+
+    public InputHandler(RoomManager roomManager, HTML feedbackPanelLastCommand, HTML feedbackPanel) {
+        this.feedbackPanelLastCommand = feedbackPanelLastCommand;
         this.feedbackPanel = feedbackPanel;
         commands.add(new GetUpCommand(roomManager, feedbackPanel));
     }
@@ -24,10 +27,11 @@ public class InputHandler {
         Command command = findCommand(input);
 
         if (command != null) {
-            command.execute();
+            feedbackPanel.setHTML(command.execute());
         } else {
             feedbackPanel.setHTML(replyStrings.unknownCommand());
         }
+        feedbackPanelLastCommand.setText(input);
     }
 
     private Command findCommand(String input) {

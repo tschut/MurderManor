@@ -27,6 +27,9 @@ public class MainUI extends Composite {
     protected HTML       storyPanel;
 
     @UiField
+    protected HTML       feedbackPanelLastCommand;
+
+    @UiField
     protected HTML       feedbackPanel;
 
     @UiField
@@ -39,7 +42,7 @@ public class MainUI extends Composite {
         initWidget(uiBinder.createAndBindUi(this));
 
         roomManager = new RoomManager(storyPanel);
-        inputHandler = new InputHandler(roomManager, feedbackPanel);
+        inputHandler = new InputHandler(roomManager, feedbackPanelLastCommand, feedbackPanel);
 
         storyPanel.setHTML(roomManager.getCurrentRoom().getDescription());
     }

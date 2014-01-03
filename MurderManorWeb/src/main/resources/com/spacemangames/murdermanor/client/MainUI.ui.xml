@@ -2,7 +2,9 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
 	<ui:style>
-	
+	.italic {
+		font-style: italic;
+	}
 	</ui:style>
 
 	<g:VerticalPanel>
@@ -16,6 +18,7 @@
 		<b:Row>
 			<b:Column size="12">
 				<b:Well>
+					<g:HTML ui:field="feedbackPanelLastCommand" addStyleNames="{style.italic}"></g:HTML>
 					<g:HTML ui:field="feedbackPanel"></g:HTML>
 				</b:Well>
 			</b:Column>
